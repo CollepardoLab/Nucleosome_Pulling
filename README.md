@@ -123,7 +123,7 @@ job_umbrella:                 # SLURM settings for the 60-window umbrella run
 - The atom numbering is read automatically from the reference directory based on the histone type; you do not need to provide it.
 
 **Notes on acetylation:**
-- Only supported for `histone: 1KX5`.
+- Only supported for canonical histones `histone: 1KX5`.
 - List the residue positions to acetylate per histone chain (H3, H4, H2A, H2B). Example: `H3: [56]` acetylates H3K56.
 - Lysine (atom type 12) is changed to acetyl-lysine (atom type 43) in the `nucl_no_LH.txt` starting structure.
 
