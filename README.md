@@ -1,6 +1,6 @@
 # pulling-sim
 
-CLI package for setting up and running nucleosome pulling simulations. Designed for ARCHER2, but adaptable to other HPC systems by modifying the bundled SLURM submission scripts.
+CLI package for setting up and running nucleosome pulling simulations. Designed for Archer2, but adaptable to other HPC systems by modifying the bundled SLURM submission scripts.
 
 ---
 ## Requirements
