@@ -30,7 +30,7 @@ make install
 echo $LD_LIBRARY_PATH
 ```
 Notes:
-- Save the LD_LIBRARY_PATH since you nees to add ir in the pulling_sim init step
+- Save the LD_LIBRARY_PATH since you need to add it in the pulling_sim init step
 - Get the path of lmp executable and chromatin.so
 - Install Grossfield Lab WHAM and get the path of the executable
 
@@ -118,7 +118,7 @@ job_umbrella:                 # SLURM settings for the 60-window umbrella run
 ```
 
 **Notes on the DNA sequence:**
-- Must be exactly 211 bases (5'→3', sense strand only — the complementary strand is generated automatically).
+- Must be exactly 211 bases (5'->3', sense strand only — the complementary strand is generated automatically).
 - Spaces and line breaks in the YAML value are ignored.
 - The atom numbering is read automatically from the reference directory based on the histone type; you do not need to provide it.
 
@@ -137,20 +137,20 @@ This creates `./1KX5_TP53/` (or `{HISTONE}_{sequence.name}/`) containing:
 
 ```
 1KX5_TP53/
-├── run_all.sh              ← the only script you need to run
-├── slurm                   ← setup pulling job (paths pre-filled)
-├── slurm-umbrella          ← umbrella sampling job (paths pre-filled)
-├── paste2.sh               ← distributes files to window directories
-├── setup60colvars.py       ← generates colvars for all 60 windows
+├── run_all.sh               the only script you need to run
+├── slurm                    setup pulling job (paths pre-filled)
+├── slurm-umbrella           umbrella sampling job (paths pre-filled)
+├── paste2.sh                distributes files to window directories
+├── setup60colvars.py        generates colvars for all 60 windows
 └── setup_stage/
-    ├── in.nucl             ← LAMMPS input template
-    ├── setup.sh            ← generates in.nucl_1..5 with random seeds
-    ├── nucl_no_LH.txt      ← starting structure (acetylated if requested)
-    ├── DNA_sequence.txt    ← generated from your 211-bp sequence
-    ├── NAFlex_params.txt   ← DNA force-field parameters
+    ├── in.nucl              LAMMPS input template
+    ├── setup.sh             generates in.nucl_1..5 with random seeds
+    ├── nucl_no_LH.txt       starting structure (acetylated if requested)
+    ├── DNA_sequence.txt     generated from your 211-bp sequence
+    ├── NAFlex_params.txt    DNA force-field parameters
     ├── window_setup_no_LH.py
-    ├── chromatin.so        ← symlink to your compiled plugin
-    └── lmp_archer2         ← symlink to your lmp binary
+    ├── chromatin.so         symlink to your compiled plugin (you need to update this if you reinstall LAMMPS Chromatin Model)
+    └── lmp_archer2          symlink to your lmp binary (you need to update this if you reinstall LAMMPS Chromatin Model)
 ```
 
 To place the simulation in a specific directory:
@@ -173,7 +173,7 @@ Copy the simulation directory to Archer2 (or run `pulling-sim setup` directly th
 bash 1KX5_TP53/run_all.sh
 ```
 
-That is all. Internally this does:
+That's all, enjoy your pulling simulations! Internally, this is what you are doing:
 
 1. Runs `setup.sh` — generates 5 randomised LAMMPS input files (`in.nucl_1` … `in.nucl_5`).
 2. Submits `slurm` — the setup job runs the 5 short pulling simulations in parallel.
@@ -217,5 +217,5 @@ Template files are stored inside the package at `pulling_sim/data/{HISTONE}/`. N
  `macroH2A`
 
 ```bash
-pip install -e .   # reinstall to pick up the new files
+pip install -e .   # reinstall to pick up the new files if there is any update in the config files or LAMMPS installation.
 ```
