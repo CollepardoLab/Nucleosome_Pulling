@@ -1,0 +1,8 @@
+Metadata-Version: 2.4
+Name: pulling-sim
+Version: 0.1.0
+Summary: CLI for setting up nucleosome pulling simulations on Archer2 LAMMPS COLLEPARDO LAB CHROMATIN MODEL
+Requires-Python: >=3.9
+Requires-Dist: click>=8.0
+Requires-Dist: pyyaml>=6.0
+Requires-Dist: numpy>=1.21

@@ -1,0 +1,2 @@
+[console_scripts]
+pulling-sim = pulling_sim.cli:main

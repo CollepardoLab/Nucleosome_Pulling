@@ -1,0 +1,36 @@
+# Histone variant to simulate.
+# Must match one of the reference directories in templates_dir:
+#   1KX5, CENPA, H2AZ, macroH2A (1KX5 is the code for the canonical histone)
+histone: 1KX5
+
+sequence:
+  # Short label used in the output directory name: {HISTONE}_{name}
+  name: TP53
+  # 211-base DNA sequence (5'→3', sense strand only; complement is generated automatically)
+  dna: >-
+    ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG
+    ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG
+    ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG
+    ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG
+    ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG
+
+# Acetylation: only supported for canonical histone core: 1KX5
+acetylation:
+  enabled: false
+  sites:
+    H3: []      # e.g. [56] for H3K56ac
+    H4: []      # e.g. [77, 79] for H4K77ac + H4K79ac
+    H2A: []
+    H2B: []
+
+# SLURM settings for the short setup pulling job (5 replicas, ~4 hours)
+job_setup:
+  nodes: 1
+  ntasks: 128
+  time: "4:00:00"
+
+# SLURM settings for the umbrella sampling job (60 windows × 5 replicas)
+job_umbrella:
+  nodes: 5
+  ntasks: 640
+  time: "24:00:00"

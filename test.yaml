@@ -1,0 +1,30 @@
+# Histone variant to simulate.
+# Must match one of the reference directories in templates_dir:
+#   1KX5, CENPA, H2AZ & macroH2A
+histone: 1KX5
+
+sequence:
+  # Short label used in the output directory name: {HISTONE}_{name}
+  name: 1KX5seq
+  # 211-base DNA sequence (5'->3', sense strand only; complement is generated automatically)
+  dna: GTTACATCCTGTGCATGTAAGTACTTACATGCACAGGATGTAACCTGCAGATACTACCAAAAGTGTATTTGGAAACTGCTCCATCAAAAGGCATGTTCAGCTGGATTCCAGCTGAACATGCCTTTTGATGGAGCAGTTTCCAAATACACTTTTGGTAGTATCTGCAGGTGATTCTCCAGGGCGGCCAGTACTTACATGCACAGGATGTAAC
+# Acetylation: only supported for histone: 1KX5
+acetylation:
+  enabled: false
+  sites:
+    H3: [36]      # H3 tail: pos 4, 9, 14, 18, 23, 27, 36, 37 | H3 core: pos 56, 64, 79, 115, 122
+    H4: [16]      # H4 tail: pos 5, 8, 12, 16, 20, 107, 111, 115, 117 | H4 core: pos 31, 44, 59, 77, 79, 91, 138, 176, 177, 197
+    H2A: [5,36]     # H2A tail: pos 5, 6, 9, 11, 13, 15, 118, 119, 124, 126, 128 | H2A core: pos 36, 74, 75, 95 
+    H2B: [25,122]     # H2B tail: pos 2, 8, 9, 12, 13, 17, 20, 21, 24, 25 | H2B core: pos 28, 31, 40, 43, 54, 82, 105, 113, 117, 122
+
+    # SLURM settings for the short setup pulling job (5 replicas, ~4 hours)
+job_setup:
+  nodes: 1
+  ntasks: 128
+  time: "1:30:00"
+
+# SLURM settings for the umbrella sampling job (60 windows × 5 replicas)
+job_umbrella:
+  nodes: 5
+  ntasks: 640
+  time: "24:00:00"

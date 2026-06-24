@@ -1,0 +1,15 @@
+archer2:
+  account: eXXX
+  partition: standard
+  qos: standard
+  # Full path to your compiled lmp binary on Archer2
+  lmp: /work/eXXX/eXXX/YOUR_USERNAME/lammps/build/lmp
+  # Full path to your compiled chromatin.so plugin on Archer2
+  chromatin_so: /work/eXXX/eXXX/YOUR_USERNAME/lammps/lib/chromatin.so
+  ld_library_path: >-
+    /work/y07/shared/utils/core/cmake/3.18.4/lib:
+    /opt/cray/libfabric/1.12.1.2.2.0.0/lib64:
+    /opt/cray/pe/gcc/11.2.0/snos/lib64:
+    /work/eXXX/eXXX/YOUR_USERNAME/lammps/lib
+  # Full path to the wham executable (used by pulling-sim analyse)
+  wham: /work/eXXX/eXXX/YOUR_USERNAME/wham/wham
