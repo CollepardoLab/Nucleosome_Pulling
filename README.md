@@ -39,7 +39,7 @@ Notes:
 Run once, either locally or on Archer2:
 
 ```bash
-git clone XXXXXXXXXXXXXXXXXXXX
+git clone https://github.com/CollepardoLab/nucleosome_pulling-package.git
 cd pulling_sim
 module load cray-python # (Archer2)
 pip install -e .
