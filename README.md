@@ -70,7 +70,7 @@ You will be prompted for:
 | SLURM QOS | `standard` |
 | Path to `lmp` binary | `/work/eXXX/eXXX/YOUR_USER/lammps/build/lmp` |
 | Path to `chromatin.so` | `/work/eXXX/eXXX/YOUR_USER/lammps/lib/chromatin.so` |
-| `LD_LIBRARY_PATH` | (pre-filled with standard Archer2 paths, press Enter to accept) |
+| `LD_LIBRARY_PATH` | paste what you get here: echo $LD_LIBRARY_PATH |
 | (nothing else needed — template files are bundled in the package) | |
 
 Configuration is saved to `~/.pulling_sim/user_config.yaml`. You can edit it manually at any time or re-run `pulling-sim init` to overwrite it.
