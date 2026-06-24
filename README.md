@@ -96,7 +96,7 @@ histone: 1KX5   # available: 1KX5, CENPA, H2AZ, macroH2A (1KX5 is the code for t
 
 sequence:
   name: TP53                  # used in the output directory name: 1KX5_TP53
-  dna: ATCGATCG...            # 211-base sequence, 5'→3' sense strand only
+  dna: ATCGATCG...            # 211-base sequence, 5'-> 3' sense strand only
 
 acetylation:
   enabled: false              # For acetylation: true (only available for 1KX5)
