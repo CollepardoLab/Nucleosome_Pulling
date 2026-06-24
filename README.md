@@ -34,9 +34,9 @@ Notes:
 - Get the path of lmp executable and chromatin.so
 - Install Grossfield Lab WHAM and get the path of the executable
 
-## Installation
+## pulling-sim installation
 
-Run once, either locally or on Archer2:
+Run once:
 
 ```bash
 git clone https://github.com/CollepardoLab/nucleosome_pulling-package.git
