@@ -1,4 +1,4 @@
-# pulling-sim
+# Nucleosome Pulling Simulation
 
 Source Code for the paper 'A Goldilocks zone of DNA flexibility defines stable yet plastic nucleosomes, tuned by histone chemistry"
 
