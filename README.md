@@ -1,6 +1,8 @@
 # pulling-sim
 
-CLI package for setting up and running nucleosome pulling simulations. Designed for Archer2, but adaptable to other HPC systems by modifying the bundled SLURM submission scripts.
+Source Code for the paper 'A Goldilocks zone of DNA flexibility defines stable yet plastic nucleosomes, tuned by histone chemistry"
+
+Package for setting up and running nucleosome pulling simulations. Designed for Archer2, but adaptable to other HPC systems by modifying the bundled SLURM submission scripts.
 
 ---
 ## Requirements
