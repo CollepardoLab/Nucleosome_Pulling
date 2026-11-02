@@ -4,6 +4,8 @@ Source Code for the paper 'A Goldilocks zone of DNA flexibility defines stable y
 
 Package for setting up and running nucleosome pulling simulations. Designed for Archer2, but adaptable to other HPC systems by modifying the bundled SLURM submission scripts.
 
+Initial and final coordinates per condition available at structures_per_condition directory
+
 ---
 ## Requirements
 
